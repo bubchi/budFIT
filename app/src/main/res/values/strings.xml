@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">budFIT</string>
+    <string-array name="priloha">
+        <item>ryza</item>
+        <item>zemiaky</item>
+        <item>bataty</item>
+        <item>kuskus</item>
+        <item>cestoviny</item>
+    </string-array>
+    <string-array name="maso">
+        <item>kuracie</item>
+        <item>hovadzie</item>
+        <item>bravcove</item>
+        <item>tofu</item>
+        <item>sojove maso</item>
+    </string-array>
+    <string-array name="ovocie">
+        <item>jablko</item>
+        <item>banan</item>
+        <item>hruska</item>
+        <item>hrozno</item>
+        <item>kiwi</item>
+    </string-array>
+    <string-array name="zelenina">
+        <item>paprika</item>
+        <item>paradajka</item>
+        <item>uhorka</item>
+        <item>salat</item>
+        <item>mrkva</item>
+    </string-array>
+    <string-array name="obylniny">
+        <item>ovsene vlocky</item>
+        <item>chleba</item>
+        <item>rozok</item>
+        <item>bageta</item>
+    </string-array>
+    <string name="title_activity_vyber_jedla">VyberJedlaActivity</string>
+    <string name="large_text">
+
+    </string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_bmi">BMI</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>

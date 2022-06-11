@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         val vodaText : TextView = binding.vodaText
         val vodaButton: ImageButton = binding.vodaButton
         var pocitadlo = 0
-
         vodaButton.setOnClickListener() {
             pocitadlo ++
             vodaText.text = pocitadlo.toString()

@@ -24,11 +24,13 @@ class VyberJedlaActivity : AppCompatActivity() {
         binding = ActivityVyberJedlaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //val spinner: Spinner = findViewById(R.id.priloha)
 
+        val customList = listOf("1", "2", "3", "4")
+        val c = listOf(jedla)
+        //val adapter = ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, c)
 
-        Jedla.values().forEach { println(it) }
-
-        println("-------------------- " + Jedla.BAGETA.kalorie)
+        //binding.ovocie.adapter =adapter
 
         var ryza: Float = 0F;
 
@@ -40,9 +42,8 @@ class VyberJedlaActivity : AppCompatActivity() {
         println("mmmmmmmmmmmmmm")
         binding.priloha.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                //val objekt = adapterView?.getItemAtPosition(position)
-                if (adapterView?.getItemAtPosition(1) == true)
-                    ryza == 44f
+                val objekt = adapterView?.getItemAtPosition(position)
+
 
             }
 

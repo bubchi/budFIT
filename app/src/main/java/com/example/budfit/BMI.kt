@@ -1,15 +1,9 @@
 package com.example.budfit
 
-import android.content.Context
 import android.os.Bundle
-import android.view.View
 import android.widget.*
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.budfit.databinding.ActivityBmiBinding
 
 class BMI : AppCompatActivity() {
@@ -34,7 +28,14 @@ class BMI : AppCompatActivity() {
             vyska = binding.editTextVyska.text.toString().toFloat() / 100
             vek = binding.editTextVek.text.toString().toFloat()
             //var kometarBMI = binding.KomentarBMI.text
+
+
+
+
+
+
             if(vaha != 0f && vyska != 0f) {
+
                 val vysledok = vaha / (vyska * vyska)
 
                 if (vysledok < 18.5) {
@@ -47,6 +48,9 @@ class BMI : AppCompatActivity() {
                 binding.textViewResult.text = vysledok.toString()
             } else
             Toast.makeText(this,"Zadaj udaje najprv", Toast.LENGTH_SHORT).show()
+
+
+            saveData()
         }
 
 
@@ -55,7 +59,12 @@ class BMI : AppCompatActivity() {
 
 
 
-}}
+}
+
+    private fun saveData() {
+        TODO("Not yet implemented")
+    }
+}
 
 
 

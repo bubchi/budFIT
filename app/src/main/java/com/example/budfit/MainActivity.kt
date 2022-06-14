@@ -15,6 +15,7 @@ import android.widget.EditText as Text
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private var progres = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,9 +30,14 @@ class MainActivity : AppCompatActivity() {
         val vodaButton: ImageButton = binding.vodaButton
         var pocitadlo = 0
 
+
         vodaButton.setOnClickListener() {
             pocitadlo ++
             vodaText.text = pocitadlo.toString()
+            if (progres <= 90)
+                progres += 10
+            updateProgres()
+
         }
         binding.vyberJedlaButton.setOnClickListener() {
             openVyberJedlaActivity()
@@ -46,6 +52,10 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    private fun updateProgres() {
+        binding.progressBar.progress = progres
     }
 
     private fun openDialog() {

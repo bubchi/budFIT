@@ -23,11 +23,8 @@ class Dialog : DialogFragment() {
         var rootView: View = inflater.inflate(R.layout.popup, container, false)
 
         //rootView.button
-        val builder: AlertDialog.Builder = AlertDialog.Builder(activity)
-        builder.setTitle("popup")
-        rootView.setOnClickListener() {
-            dismiss()
-        }
+        /*val builder: AlertDialog.Builder = AlertDialog.Builder(activity)
+        builder.setTitle("popup")*/
         return rootView
     }
     /*override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {

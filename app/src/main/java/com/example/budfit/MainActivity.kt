@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.fragment.app.DialogFragment
 import com.example.budfit.databinding.ActivityMainBinding
 import com.google.android.material.textfield.TextInputLayout
 import android.widget.EditText as Text
@@ -35,6 +36,20 @@ class MainActivity : AppCompatActivity() {
         binding.vyberJedlaButton.setOnClickListener() {
             openVyberJedlaActivity()
         }
+
+
+        val cvicenieButton = binding.cvicenieButton
+        cvicenieButton.setOnClickListener() {
+
+            var dialog = Dialog()
+            dialog.show(supportFragmentManager, "Dialog")
+        }
+
+
+    }
+
+    private fun openDialog() {
+        TODO("Not yet implemented")
     }
 
     private fun openBMIActivity() {

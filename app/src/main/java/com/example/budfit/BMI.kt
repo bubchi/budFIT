@@ -1,5 +1,6 @@
 package com.example.budfit
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.*
@@ -26,10 +27,6 @@ class BMI : AppCompatActivity() {
         var vaha = 0f;
         var vek = 0f;
 
-        //val vaha = binding.editTextTextVaha
-        //val vyska = binding.editTextVyska
-        //val vysledok = binding.textViewResult
-        //val vypocitajButton : Button = binding.VypocitajButton
 
         binding.VypocitajButton.setOnClickListener() {
             //TODO null hodnoty osetrit
@@ -51,6 +48,8 @@ class BMI : AppCompatActivity() {
             } else
             Toast.makeText(this,"Zadaj udaje najprv", Toast.LENGTH_SHORT).show()
         }
+
+
 
 
 

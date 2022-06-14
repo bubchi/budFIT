@@ -4,49 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@drawable/l"
     tools:context=".VyberJedlaActivity">
 
 
     <EditText
-        android:id="@+id/editTextZelenina2"
+        android:id="@+id/mnozstvoObylnin"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="456dp"
-        android:ems="10"
-        android:hint="kus"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.267"
-        app:layout_constraintStart_toEndOf="@+id/zelenina"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextZelenina3"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="556dp"
         android:ems="10"
         android:hint="gramy"
         android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/obylniny"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.267"
+        app:layout_constraintHorizontal_bias="0.364"
         app:layout_constraintStart_toEndOf="@+id/zelenina"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/obylniny" />
 
-    <Spinner
-        android:id="@+id/maso"
-        android:layout_width="194dp"
-        android:layout_height="51dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="156dp"
-        android:entries="@array/maso"
+    <EditText
+        android:id="@+id/mnozstvoPriholy"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="gramy"
+        android:inputType="number"
+        app:layout_constraintHorizontal_bias="0.364"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toEndOf="@id/priloha"
+        app:layout_constraintBottom_toBottomOf="@+id/priloha"
+        app:layout_constraintTop_toTopOf="@+id/priloha"
+         />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="vyber druh jedla a mnozstvo"
+        android:textColor="#0019FF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/sumaKalorii"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.041" />
+
+    <TextView
+        android:id="@+id/sumaKalorii"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Suma Kalorii"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/maso"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.76" />
 
     <Spinner
         android:id="@+id/priloha"
@@ -55,26 +69,11 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="44dp"
         android:entries="@array/priloha"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintBottom_toTopOf="@+id/zelenina"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/maso" />
-
-    <Spinner
-        android:id="@+id/ovocie"
-        android:layout_width="194dp"
-        android:layout_height="51dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="48dp"
-        android:entries="@array/ovocie"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/zelenina" />
 
     <Spinner
         android:id="@+id/zelenina"
@@ -83,10 +82,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="44dp"
         android:entries="@array/zelenina"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintBottom_toTopOf="@+id/ovocie"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/priloha" />
 
@@ -97,74 +95,90 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="84dp"
+        android:layout_marginStart="44dp"
         android:entries="@array/obylniny"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ovocie" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="vyber druh jedla a mnozstvo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <Spinner
+        android:id="@+id/ovocie"
+        android:layout_width="194dp"
+        android:layout_height="51dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="44dp"
+        android:entries="@array/ovocie"
+        app:layout_constraintBottom_toTopOf="@+id/obylniny"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.092" />
-
-    <EditText
-        android:id="@+id/editTextMaso"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="156dp"
-        android:ems="10"
-        android:hint="gramy"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.267"
-        app:layout_constraintStart_toEndOf="@+id/maso"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextPriloha"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="260dp"
-        android:ems="10"
-        android:hint="gramy"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.267"
-        app:layout_constraintStart_toEndOf="@+id/priloha"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextZelenina"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="360dp"
-        android:ems="10"
-        android:hint="kus"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.267"
-        app:layout_constraintStart_toEndOf="@+id/zelenina"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/zelenina" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+
+        android:background="@color/dustblue"
         android:text="Vypocitaj kalorie"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/obylniny" />
+
+    <Spinner
+        android:id="@+id/maso"
+        android:layout_width="194dp"
+        android:layout_height="51dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="44dp"
+        android:entries="@array/maso"
+        android:popupBackground="@color/dustblue"
+        app:layout_constraintBottom_toTopOf="@+id/priloha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sumaKalorii" />
+
+    <EditText
+        android:id="@+id/mnozstvoOvocia"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="kus"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/ovocie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.364"
+        app:layout_constraintStart_toEndOf="@+id/zelenina"
+        app:layout_constraintTop_toTopOf="@+id/ovocie" />
+
+    <EditText
+        android:id="@+id/mnozstvoMasa"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="gramy"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/maso"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.364"
+        app:layout_constraintStart_toEndOf="@+id/maso"
+        app:layout_constraintTop_toTopOf="@+id/maso" />
+
+    <EditText
+        android:id="@+id/mnozstvoZeleniny"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="kus"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/zelenina"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.364"
+        app:layout_constraintStart_toEndOf="@+id/zelenina"
+        app:layout_constraintTop_toTopOf="@+id/zelenina" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">budFIT</string>
     <string-array name="priloha">
+        <item>vybrat priloha</item>
         <item>ryza</item>
         <item>zemiaky</item>
         <item>bataty</item>
@@ -8,6 +9,7 @@
         <item>cestoviny</item>
     </string-array>
     <string-array name="maso">
+        <item>vybrat maso</item>
         <item>kuracie</item>
         <item>hovadzie</item>
         <item>bravcove</item>
@@ -15,6 +17,7 @@
         <item>sojove maso</item>
     </string-array>
     <string-array name="ovocie">
+        <item>vybrat ovocie</item>
         <item>jablko</item>
         <item>banan</item>
         <item>hruska</item>
@@ -22,6 +25,7 @@
         <item>kiwi</item>
     </string-array>
     <string-array name="zelenina">
+        <item>vybrat zeleninu</item>
         <item>paprika</item>
         <item>paradajka</item>
         <item>uhorka</item>
@@ -29,6 +33,7 @@
         <item>mrkva</item>
     </string-array>
     <string-array name="obylniny">
+        <item>vybrat obylninu</item>
         <item>ovsene vlocky</item>
         <item>chleba</item>
         <item>rozok</item>

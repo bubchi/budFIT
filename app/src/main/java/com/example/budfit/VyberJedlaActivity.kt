@@ -14,6 +14,8 @@ class VyberJedlaActivity : AppCompatActivity() {
     private lateinit var binding: ActivityVyberJedlaBinding
     private lateinit var jedla: Jedla
     private var Kcal: Int = 0
+    private var totalKcal: Int = 0
+
     private lateinit var mnozstva : ArrayList<String>
     //private var mnozstvoMasa = binding.mnozstvoMasa.text.toString()
     //private var mnozstvoPrilohy = binding.mnozstvoPrilohy.text.toString()
@@ -77,9 +79,14 @@ class VyberJedlaActivity : AppCompatActivity() {
                             binding.mnozstvoMasa.text.toString() + " " + it.kalorie.toString(),
                             Toast.LENGTH_SHORT).show()
                         Kcal = (binding.mnozstvoMasa.text.toString().toFloat() * it.kalorie.toString().toFloat()).toInt()
+                                /*(binding.mnozstvoZeleniny.text.toString().toFloat() * it.kalorie.toString().toFloat()) +
+                                (binding.mnozstvoOvocia.text.toString().toFloat() * it.kalorie.toString().toFloat()) +
+                                (binding.mnozstvoObylnin.text.toString().toFloat() * it.kalorie.toString().toFloat())*/
 
 
                         binding.sumaKalorii.text = Kcal.toString() + " " + it.kalorie.toString()
+
+                        totalKcal += Kcal
                         //TODO v cykle prejst formulare a pomocou switchu priradit hodnotu a pripocitat kalorie
                     }
                 }
@@ -99,11 +106,12 @@ class VyberJedlaActivity : AppCompatActivity() {
 
 
 
+
     fun backToMainActivity() {
         val switchActivityIntent = Intent(this, MainActivity::class.java)
-        if (Kcal != null) {
+        if (totalKcal != null) {
             switchActivityIntent.putExtra(
-                "kalorie", Kcal
+                "kalorie", totalKcal
             )
         }
         startActivity(switchActivityIntent)

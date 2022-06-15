@@ -2,6 +2,7 @@ package com.example.budfit
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -17,7 +18,8 @@ class MainActivity : AppCompatActivity() {
     private var pocitadlo = 0
 
     private lateinit var voda: String
-    private var kalorie: Int = 0
+    private var sumaKcal: Int = 0
+    private var receivedKcal: Int = 0
 
     private lateinit var vodaText : String
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,8 +38,15 @@ class MainActivity : AppCompatActivity() {
         })
 
 
+        reciveData()
         val kcalJedlo: TextView = binding.kcalJedlo
-        kcalJedlo.text = kalorie.toString()
+
+        //if (sumaKcal > 0)
+        sumaKcal = sumaKcal + receivedKcal
+        kcalJedlo.text = sumaKcal.toString()
+
+       //sumaKcal = sumaKcal + receivedKcal
+
 
         //vodaText = binding.vodaText
         val vodaText = binding.vodaText
@@ -103,7 +112,7 @@ class MainActivity : AppCompatActivity() {
         editor.apply(){
             putInt("check", pocitadlo)
             putInt("p", progres)
-            putInt("kcal", kalorie)
+            putInt("kcal", sumaKcal)
             //putString("voda", voda)
         }.apply()
     }
@@ -111,16 +120,19 @@ class MainActivity : AppCompatActivity() {
         val sharedPreferences =getSharedPreferences("SharedP", Context.MODE_PRIVATE)
         pocitadlo =sharedPreferences.getInt("check", 0)
         progres = sharedPreferences.getInt("p", 0)
-        kalorie = sharedPreferences.getInt("kcal", 0)
+        sumaKcal = sharedPreferences.getInt("kcal", 0)
         //val savedString : String? = sharedPreferences.getString("voda", null)
         //vodaText.text = pocitadlo.toString()
     }
 
 
     private  fun reciveData() {
-        kalorie = intent.getIntExtra("kalorie", 0)
+        receivedKcal = intent.getIntExtra("kalorie", 0)
     }
 
+    private fun resetSharedP(){
+        //SharedPreferences reset = contex
+    }
 
 
 

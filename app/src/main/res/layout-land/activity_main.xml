@@ -16,26 +16,26 @@
         android:layout_centerVertical="true"
         android:text="Vypi 10 pohárov vody a splň denný ciel pitného režimu"
         android:textAlignment="center"
-        android:textSize="16sp"
         android:textColor="@color/purple_700"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.849"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696" />
+        app:layout_constraintVertical_bias="0.686" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="28dp"
         android:text="open BMI"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.822"
+        app:layout_constraintHorizontal_bias="0.847"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.443" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/vodaText"
@@ -65,21 +65,20 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@android:drawable/ic_input_add" />
 
-    <ImageButton
-        android:id="@+id/vyberJedlaButton"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="44dp"
-        android:layout_height="42dp"
-
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintBottom_toBottomOf="@+id/kcalJedlo"
+    <TextView
+        android:id="@+id/cvicenieTextView"
+        android:layout_width="240sp"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="32dp"
+        android:text="cvicenie"
+        android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.173"
-        app:layout_constraintStart_toEndOf="@+id/kcalJedlo"
-        app:layout_constraintTop_toTopOf="@+id/kcalJedlo"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        app:layout_constraintHorizontal_bias="0.169"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kcalJedlo" />
 
     <ImageButton
         android:id="@+id/cvicenieButton"
@@ -98,21 +97,6 @@
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <TextView
-        android:id="@+id/cvicenieTextView"
-        android:layout_width="240sp"
-        android:layout_height="30dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="44dp"
-        android:text="cvicenie"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.169"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kcalJedlo" />
-
-    <TextView
         android:id="@+id/kcalJedlo"
         android:layout_width="240sp"
         android:layout_height="30dp"
@@ -121,7 +105,7 @@
 
         android:layout_alignParentEnd="true"
 
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:text="jedlo"
         android:textAlignment="center"
         android:textSize="24sp"
@@ -129,6 +113,21 @@
         app:layout_constraintHorizontal_bias="0.169"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vodaText" />
+
+    <ImageButton
+        android:id="@+id/vyberJedlaButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="44dp"
+        android:layout_height="42dp"
+
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/kcalJedlo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintStart_toEndOf="@+id/kcalJedlo"
+        app:layout_constraintTop_toTopOf="@+id/kcalJedlo"
+        app:srcCompat="@android:drawable/ic_input_add" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -138,9 +137,10 @@
         android:progressDrawable="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.928"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.737"
+        app:layout_constraintVertical_bias="0.786"
         tools:progress="60" />
 
     <Button
@@ -150,8 +150,10 @@
         android:text="Reset data"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

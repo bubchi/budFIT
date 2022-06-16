@@ -5,52 +5,47 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.ui.AppBarConfiguration
 import com.example.budfit.databinding.ActivityBmiBinding
+import java.text.DecimalFormat
+import kotlin.math.roundToInt
 
 class BMI : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
+    private var vysledok: Float = 0f
     private lateinit var binding: ActivityBmiBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityBmiBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var vyska = 0f;
-        var vaha = 0f;
-        var vek = 0f;
+        binding.textViewResult.text = "" //schova vysledny text
+        binding.KomentarBMI.text = "" //schova vysledny text
 
-
+        /**
+         * vypocet BMI po stlaceni tlacidla
+         */
         binding.VypocitajButton.setOnClickListener() {
-            //TODO null hodnoty osetrit
-            vaha = binding.editTextTextVaha.text.toString().toFloat()
-            vyska = binding.editTextVyska.text.toString().toFloat() / 100
-            vek = binding.editTextVek.text.toString().toFloat()
-            //var kometarBMI = binding.KomentarBMI.text
+            val vaha = binding.editTextTextVaha.text.toString().toFloatOrNull()
+            var vyska = binding.editTextVyska.text.toString().toFloatOrNull()
+            val vek = binding.editTextVek.text.toString().toFloatOrNull()
 
-
-
-
-
-
-            if(vaha != 0f && vyska != 0f) {
-
-                val vysledok = vaha / (vyska * vyska)
+            if (vaha != null && vyska != null) {
+                vyska = vyska/100
+                vysledok = vaha / (vyska * vyska) //vzorec pre vypocet BMI
 
                 if (vysledok < 18.5) {
-                    binding.KomentarBMI.text = "malo"
+                    binding.KomentarBMI.text = "podla BMI mas nizku vahu"
                 } else if (vysledok < 24.9) {
-                    binding.KomentarBMI.text = "ok"
+                    binding.KomentarBMI.text = "podla BMI mas vahu v norme"
                 } else
-                    binding.KomentarBMI.text = "vela"
-
-                binding.textViewResult.text = vysledok.toString()
-            } else
-            Toast.makeText(this,"Zadaj udaje najprv", Toast.LENGTH_SHORT).show()
+                    binding.KomentarBMI.text = "podla BMI mas nadvahu"
 
 
-            saveData()
+                val df =DecimalFormat("#.##")
+
+                binding.textViewResult.text = df.format(vysledok).toString() //vypis BMI ypoctu
+             } else {
+                 Toast.makeText(this,"Zadaj udaje najprv", Toast.LENGTH_SHORT).show()}
         }
 
 
@@ -61,9 +56,7 @@ class BMI : AppCompatActivity() {
 
 }
 
-    private fun saveData() {
-        TODO("Not yet implemented")
-    }
+
 }
 
 

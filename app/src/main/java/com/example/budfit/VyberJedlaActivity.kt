@@ -12,90 +12,48 @@ import com.example.budfit.databinding.ActivityVyberJedlaBinding
 class VyberJedlaActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityVyberJedlaBinding
-    private lateinit var jedla: Jedla
     private var Kcal: Int = 0
     private var totalKcal: Int = 0
 
-    private lateinit var mnozstva : ArrayList<String>
-    //private var mnozstvoMasa = binding.mnozstvoMasa.text.toString()
-    //private var mnozstvoPrilohy = binding.mnozstvoPrilohy.text.toString()
-    //private var mnozstvoZeleniny = binding.mnozstvoZeleniny.text.toString()
-    //private var mnozstvoOvocia = binding.mnozstvoOvocia.text.toString()
-    //private var mnozstvoObylnin = binding.mnozstvoObylnin.text.toString()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityVyberJedlaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        /*mnozstva.add(mnozstvoMasa)
-        mnozstva.add(mnozstvoPrilohy)
-        mnozstva.add(mnozstvoZeleniny)
-        mnozstva.add(mnozstvoOvocia)
-        mnozstva.add(mnozstvoObylnin)*/
 
-        var ryza: Float = 0F;
+        /**
+         * vypocet kalorii po stlaceni buttonu
+         */
+        binding.vypocitajKcal.setOnClickListener() {
+            if (binding.mnozstvoJedla.text.toString().toFloatOrNull() != null) { //kontrola zadaneho mnozstva
+                Jedla.values().forEach { //vsetky jedla enumu
 
-
-        /*var spinnerPriloha = binding.priloha.adapter.getItem(1)
-        if (spinnerPriloha.equals(0)) {
-            ryza = Jedla.RYZA.kalorie
-        }*/
-
-        println("mmmmmmmmmmmmmm")
-        binding.priloha.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                adapterView: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                val objekt = adapterView?.getItemAtPosition(position)
-
-
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
-            }
-        }
-
-        //val b = binding.maso.get
-        binding.button3.setOnClickListener() {
-            if (binding.mnozstvoMasa.text.toString().toFloatOrNull() != null || binding.mnozstvoPrilohy.text.toString().toIntOrNull() != null ||
-                binding.mnozstvoZeleniny.text.toString().toIntOrNull() != null || binding.mnozstvoOvocia.text.toString().toIntOrNull() != null ||
-                binding.mnozstvoObylnin.text.toString().toIntOrNull() != null
-            ) {
-                Jedla.values().forEach {
+                    //ak sa najde zhoda v mene enumu Jedla a nzvu itemu v spinneri
                     if (it.meno == binding.maso.selectedItem.toString() || it.meno == binding.priloha.selectedItem.toString() ||
                         it.meno == binding.zelenina.selectedItem.toString() || it.meno == binding.ovocie.selectedItem.toString() ||
                         it.meno == binding.obylniny.selectedItem.toString()) {
-                        /*Log.v(
-                            "RYZA menoASDASDAFADFASDASDASD",
-                            binding.priloha.selectedItem.toString()
-                        )*/
-                        Toast.makeText(
-                            this@VyberJedlaActivity,
-                            binding.mnozstvoMasa.text.toString() + " " + it.kalorie.toString(),
-                            Toast.LENGTH_SHORT).show()
-                        Kcal = (binding.mnozstvoMasa.text.toString().toFloat() * it.kalorie.toString().toFloat()).toInt()
-                                /*(binding.mnozstvoZeleniny.text.toString().toFloat() * it.kalorie.toString().toFloat()) +
-                                (binding.mnozstvoOvocia.text.toString().toFloat() * it.kalorie.toString().toFloat()) +
-                                (binding.mnozstvoObylnin.text.toString().toFloat() * it.kalorie.toString().toFloat())*/
 
+                        //vypocet zvolene mnozstvo gramov * kalorickea hodnota na jeden gram z enumu
+                        Kcal = (binding.mnozstvoJedla.text.toString().toFloat() * it.kalorie.toString().toFloat()).toInt()
 
-                        binding.sumaKalorii.text = Kcal.toString() + " " + it.kalorie.toString()
+                        binding.sumaKalorii.text = Kcal.toString() // vypis vypocitanych kcal
 
-                        totalKcal += Kcal
-                        //TODO v cykle prejst formulare a pomocou switchu priradit hodnotu a pripocitat kalorie
-                    }
+                        totalKcal += Kcal //prirata vyratane hodnoty Kcal do premennej (pre nasledne posunutie do MainActivity)
+
+                        binding.maso.setSelection(0) //nastavi defaul hodnotu spinnerov
+                        binding.priloha.setSelection(0)
+                        binding.zelenina.setSelection(0)
+                        binding.ovocie.setSelection(0)
+                        binding.obylniny.setSelection(0)
+                    } 
                 }
             }
-
-
-
         }
 
+        /**
+         * po kliknuti buttonu zavola metodu backToMainActivity
+         */
         binding.backButton.setOnClickListener() {
             backToMainActivity()
         }
@@ -104,9 +62,9 @@ class VyberJedlaActivity : AppCompatActivity() {
 
     }
 
-
-
-
+    /**
+     * prepnutie do MainActivity spolu s datami o mnozsve kalorii
+     */
     fun backToMainActivity() {
         val switchActivityIntent = Intent(this, MainActivity::class.java)
         if (totalKcal != null) {

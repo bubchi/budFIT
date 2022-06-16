@@ -7,14 +7,19 @@
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3770833333333333" />
         <entry key="app/src/main/res/drawable/circle.xml" value="0.29" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3770833333333333" />
+        <entry key="app/src/main/res/layout-land/activity_bmi.xml" value="0.5051067780872794" />
+        <entry key="app/src/main/res/layout-land/activity_main.xml" value="0.4088541666666667" />
+        <entry key="app/src/main/res/layout-land/activity_vyber_jedla.xml" value="0.3109375" />
         <entry key="app/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.290625" />
         <entry key="app/src/main/res/layout-w936dp/content_scrolling.xml" value="0.17265625" />
         <entry key="app/src/main/res/layout/activity_bmi.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.361505126953125" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.34739583333333335" />
         <entry key="app/src/main/res/layout/activity_vyber_jedla.xml" value="0.375" />
         <entry key="app/src/main/res/layout/bmi_fragment.xml" value="0.23020833333333332" />
         <entry key="app/src/main/res/layout/content_scrolling.xml" value="0.21614583333333334" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_goal.xml" value="0.3614583333333333" />
         <entry key="app/src/main/res/layout/popup.xml" value="0.1" />
         <entry key="app/src/main/res/menu/menu_vyber_jedla.xml" value="0.27760416666666665" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3770833333333333" />

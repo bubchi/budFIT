@@ -10,23 +10,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BudFIT">
         <activity
+            android:name=".SplashScreen"
+            android:exported="true"
+            android:theme="@style/ThemeSplash">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity
             android:name=".BMI"
             android:exported="false"
             android:label="@string/title_activity_bmi"
-            android:theme="@style/Theme.BudFIT.NoActionBar" />
+            android:theme="@style/Theme.BudFIT.NoActionBar"
+            android:configChanges="orientation"/>
         <activity
             android:name=".VyberJedlaActivity"
             android:exported="false"
+            android:configChanges="orientation"
             android:label="@string/title_activity_vyber_jedla"
             android:theme="@style/Theme.BudFIT.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

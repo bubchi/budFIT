@@ -1,9 +1,5 @@
 package com.example.budfit
 
-import android.app.AlertDialog
-import android.app.Dialog
-import android.content.DialogInterface
-import android.content.DialogInterface.OnClickListener
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,24 +15,7 @@ class Dialog : DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-
         var rootView: View = inflater.inflate(R.layout.popup, container, false)
-
-        //rootView.button
-        /*val builder: AlertDialog.Builder = AlertDialog.Builder(activity)
-        builder.setTitle("popup")*/
         return rootView
     }
-    /*override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        val builder: AlertDialog.Builder = AlertDialog.Builder(activity)
-        val inflater : LayoutInflater = activity.layoutInflater
-        val view : View =inflater.inflate(R.layout.popup, null)
-
-        builder.setView(view).setTitle("Pop up").setNeutralButton("OK", DialogInterface.OnClickListener { dialog, which ->  })
-
-
-        return builder.create()
-    }*/
-
-
 }

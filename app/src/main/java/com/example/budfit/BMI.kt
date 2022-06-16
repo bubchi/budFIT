@@ -8,6 +8,10 @@ import com.example.budfit.databinding.ActivityBmiBinding
 import java.text.DecimalFormat
 import kotlin.math.roundToInt
 
+/**
+ * Aktivita, vypocita BMI a vypise popis vysledku na zaklade
+ * vlozenych dat pre vypocet od uzivatela
+ */
 class BMI : AppCompatActivity() {
 
     private var vysledok: Float = 0f

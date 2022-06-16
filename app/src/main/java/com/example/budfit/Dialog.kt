@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.appcompat.app.AppCompatDialogFragment
 import androidx.fragment.app.DialogFragment
 
+/**
+ * Fragment, ktory zobrazi graficky obrazok oznamujuci uzivatelovi
+ * najbliziu planovaciu aktivitu
+ */
 class Dialog : DialogFragment() {
     override fun onCreateView(
         inflater: LayoutInflater,

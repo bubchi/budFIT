@@ -10,15 +10,17 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import com.example.budfit.databinding.ActivityMainBinding
-
+/**
+ * Aktivita, ktora umoznuje uzivatelovi pridat mnozstvo vody aj s grafickym zobrazeni na progres bare
+ * po kliknuti na tlacidla otvori dalsiu aktivity
+ * uschovava vsetky data cez share dpreferences ktore moze uzivatel resetovat
+ */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private var progres = 0
     private var pocitadlo = 0
 
-
-    private lateinit var voda: String
     private var sumaKcal: Int = 0
     private var receivedKcal: Int = 0
 
@@ -59,12 +61,6 @@ class MainActivity : AppCompatActivity() {
         val vodaText = binding.vodaText
         val vodaButton = binding.vodaButton
 
-
-
-
-
-
-
         /**
          * po stlaceni tlacida prida mnozstvo a vypise
          */
@@ -72,9 +68,9 @@ class MainActivity : AppCompatActivity() {
             pocitadlo ++
             vodaText.text = "vypite pohare vody: " + pocitadlo.toString()
             if (progres <= 90) {
-                progres += 10
+                progres += 10 //posunie progres
             }
-            updateProgres() //metoda kt posunie hodnotu k uzatvoreniu kruhu
+            updateProgres() //metoda kt aktualizuje hodnotu k uzatvoreniu kruhu
             saveData()
         }
 
@@ -114,7 +110,6 @@ class MainActivity : AppCompatActivity() {
 
             sumaKcal = 0
             kcalJedlo.setText("jedlo")
-
         }
         saveData()
 
@@ -126,7 +121,6 @@ class MainActivity : AppCompatActivity() {
     private fun updateProgres() {
         binding.progressBar.progress = progres
     }
-
 
     /**
      * otvori aktivitu BMI
@@ -160,7 +154,6 @@ class MainActivity : AppCompatActivity() {
             //putInt("vvisible", pitnyRezimGoal)
         }.apply()
     }
-
 
     /**
      * nacitanie ulozenych dat cez shared preferences

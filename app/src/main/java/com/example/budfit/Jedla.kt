@@ -1,5 +1,8 @@
 package com.example.budfit
 
+/**
+ * Enum trieda obsahujuca poraviny s hodnotou kalorii
+ */
 enum class Jedla(val meno: String,val kalorie: Float) {
     KURA("kuracie",1.5F),
     HOVADZIE("hovadzie",1.39F),

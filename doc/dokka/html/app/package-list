@@ -1,0 +1,45 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.example.budfit////PointingToDeclaration/app/com.example.budfit/index.html
+$dokka.location:com.example.budfit/BMI///PointingToDeclaration/app/com.example.budfit/-b-m-i/index.html
+$dokka.location:com.example.budfit/BMI/BMI/#/PointingToDeclaration/app/com.example.budfit/-b-m-i/-b-m-i.html
+$dokka.location:com.example.budfit/Dialog///PointingToDeclaration/app/com.example.budfit/-dialog/index.html
+$dokka.location:com.example.budfit/Dialog/Dialog/#/PointingToDeclaration/app/com.example.budfit/-dialog/-dialog.html
+$dokka.location:com.example.budfit/Dialog/onCreateView/#android.view.LayoutInflater#android.view.ViewGroup?#android.os.Bundle?/PointingToDeclaration/app/com.example.budfit/-dialog/on-create-view.html
+$dokka.location:com.example.budfit/Jedla.BAGETA///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-b-a-g-e-t-a/index.html
+$dokka.location:com.example.budfit/Jedla.BANAN///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-b-a-n-a-n/index.html
+$dokka.location:com.example.budfit/Jedla.BATATY///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-b-a-t-a-t-y/index.html
+$dokka.location:com.example.budfit/Jedla.BRAVCOVE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-b-r-a-v-c-o-v-e/index.html
+$dokka.location:com.example.budfit/Jedla.CESTOVINY///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-c-e-s-t-o-v-i-n-y/index.html
+$dokka.location:com.example.budfit/Jedla.CHLEBA///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-c-h-l-e-b-a/index.html
+$dokka.location:com.example.budfit/Jedla.HOVADZIE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-h-o-v-a-d-z-i-e/index.html
+$dokka.location:com.example.budfit/Jedla.HROZNO///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-h-r-o-z-n-o/index.html
+$dokka.location:com.example.budfit/Jedla.HRUSKA///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-h-r-u-s-k-a/index.html
+$dokka.location:com.example.budfit/Jedla.JABLKO///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-j-a-b-l-k-o/index.html
+$dokka.location:com.example.budfit/Jedla.KIWI///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-k-i-w-i/index.html
+$dokka.location:com.example.budfit/Jedla.KURA///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-k-u-r-a/index.html
+$dokka.location:com.example.budfit/Jedla.KUSKUS///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-k-u-s-k-u-s/index.html
+$dokka.location:com.example.budfit/Jedla.MRKVA///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-m-r-k-v-a/index.html
+$dokka.location:com.example.budfit/Jedla.OVSENEVLOCKY///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-o-v-s-e-n-e-v-l-o-c-k-y/index.html
+$dokka.location:com.example.budfit/Jedla.PAPRIKA///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-p-a-p-r-i-k-a/index.html
+$dokka.location:com.example.budfit/Jedla.PARADAJKA///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-p-a-r-a-d-a-j-k-a/index.html
+$dokka.location:com.example.budfit/Jedla.ROZOK///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-r-o-z-o-k/index.html
+$dokka.location:com.example.budfit/Jedla.RYZA///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-r-y-z-a/index.html
+$dokka.location:com.example.budfit/Jedla.SALAT///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-s-a-l-a-t/index.html
+$dokka.location:com.example.budfit/Jedla.SOJOVE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-s-o-j-o-v-e/index.html
+$dokka.location:com.example.budfit/Jedla.TOFU///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-t-o-f-u/index.html
+$dokka.location:com.example.budfit/Jedla.UHORKA///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-u-h-o-r-k-a/index.html
+$dokka.location:com.example.budfit/Jedla.VYBRAT///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-v-y-b-r-a-t/index.html
+$dokka.location:com.example.budfit/Jedla.ZAMIAKY///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.example.budfit/-jedla/-z-a-m-i-a-k-y/index.html
+$dokka.location:com.example.budfit/Jedla///PointingToDeclaration/app/com.example.budfit/-jedla/index.html
+$dokka.location:com.example.budfit/Jedla/kalorie/#/PointingToDeclaration/app/com.example.budfit/-jedla/kalorie.html
+$dokka.location:com.example.budfit/Jedla/meno/#/PointingToDeclaration/app/com.example.budfit/-jedla/meno.html
+$dokka.location:com.example.budfit/MainActivity///PointingToDeclaration/app/com.example.budfit/-main-activity/index.html
+$dokka.location:com.example.budfit/MainActivity/MainActivity/#/PointingToDeclaration/app/com.example.budfit/-main-activity/-main-activity.html
+$dokka.location:com.example.budfit/SplashScreen///PointingToDeclaration/app/com.example.budfit/-splash-screen/index.html
+$dokka.location:com.example.budfit/SplashScreen/SplashScreen/#/PointingToDeclaration/app/com.example.budfit/-splash-screen/-splash-screen.html
+$dokka.location:com.example.budfit/VyberJedlaActivity///PointingToDeclaration/app/com.example.budfit/-vyber-jedla-activity/index.html
+$dokka.location:com.example.budfit/VyberJedlaActivity/VyberJedlaActivity/#/PointingToDeclaration/app/com.example.budfit/-vyber-jedla-activity/-vyber-jedla-activity.html
+$dokka.location:com.example.budfit/VyberJedlaActivity/backToMainActivity/#/PointingToDeclaration/app/com.example.budfit/-vyber-jedla-activity/back-to-main-activity.html
+com.example.budfit
+

@@ -9,12 +9,15 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.budfit.databinding.ActivityVyberJedlaBinding
 
+/**
+ * Aktivita, ktora umoznuje uzivatelovi z 5 spinnerov vybrat z kazdeho rozne druhy jedal
+ * zadat mnozstvo gramov a nasledne vypocita mnozstvo kalorii
+ */
 class VyberJedlaActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityVyberJedlaBinding
     private var Kcal: Int = 0
     private var totalKcal: Int = 0
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,9 +60,6 @@ class VyberJedlaActivity : AppCompatActivity() {
         binding.backButton.setOnClickListener() {
             backToMainActivity()
         }
-
-
-
     }
 
     /**

@@ -1,11 +1,11 @@
 package com.example.budfit
 import android.view.View
 import android.widget.TextView
+import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Lifecycle
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.launchActivity
-import androidx.test.espresso.Espresso.onData
-import com.example.budfit.MainActivity
+
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import org.junit.Rule
@@ -18,6 +18,9 @@ import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.action.ViewActions.click
 
 import androidx.test.espresso.assertion.PositionAssertions.isRightOf
+import androidx.test.espresso.intent.Intents.intended
+import androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent
+import androidx.test.espresso.intent.rule.IntentsTestRule
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import junit.framework.Assert.assertEquals
@@ -32,6 +35,10 @@ public class MainTest {
 
     @get:Rule
     val activityRule = ActivityScenarioRule(MainActivity::class.java)
+
+    @Rule
+    @JvmField
+    val mainActivityRule = IntentsTestRule(MainActivity::class.java)
     var mnozstvoVody = 0
 
 
@@ -83,15 +90,22 @@ public class MainTest {
     }
 
 
+    @Test
+    public fun cvicenie() {
+        onView(withId(R.id.cvicenieButton)).perform(click())
+        //intended(hasComponent(Dialog::class.java!!.getName()))
+    }
 
     @Test
     public fun testOpenBMI() {
         onView(withId(R.id.button)).perform(click())
+        intended(hasComponent(BMI::class.java!!.getName()))
     }
 
     @Test
     public fun testOpenAddKcal() {
         onView(withId(R.id.vyberJedlaButton)).perform(click())
+        intended(hasComponent(VyberJedlaActivity::class.java!!.getName()))
     }
 
 

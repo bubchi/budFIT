@@ -1,7 +1,10 @@
 package com.example.budfit
+import android.view.View
+import android.widget.TextView
 import androidx.lifecycle.Lifecycle
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.launchActivity
+import androidx.test.espresso.Espresso.onData
 import com.example.budfit.MainActivity
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
@@ -9,10 +12,16 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.UiController
+import androidx.test.espresso.ViewAction
+import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.action.ViewActions.click
+
 import androidx.test.espresso.assertion.PositionAssertions.isRightOf
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
+import junit.framework.Assert.assertEquals
+import org.hamcrest.Matcher
 import org.junit.Before
 import java.util.regex.Pattern.matches
 
@@ -23,28 +32,67 @@ public class MainTest {
 
     @get:Rule
     val activityRule = ActivityScenarioRule(MainActivity::class.java)
-    /*private lateinit var scenario: ActivityScenario<MainActivity>
-    @Before
-    fun setup(){
-        scenario = launchActivity()
-        scenario.moveToState(Lifecycle.State.STARTED)
-    }*/
+    var mnozstvoVody = 0
+
+
+    fun getText(matcher: ViewInteraction): String {
+        var text = String()
+        matcher.perform(object : ViewAction {
+            override fun getConstraints(): Matcher<View> {
+                return isAssignableFrom(TextView::class.java)
+            }
+
+            override fun getDescription(): String {
+                return "Text of the view"
+            }
+
+            override fun perform(uiController: UiController, view: View) {
+                val tv = view as TextView
+                text = tv.text.toString()
+            }
+        })
+
+        return text
+    }
+
+    @Test
+    public fun resetDataTest() {
+        onView(withId(R.id.resetData)).perform(click())
+
+        val voda: ViewInteraction = onView(withId(R.id.vodaText))
+        val jedlo: ViewInteraction = onView(withId(R.id.kcalJedlo))
+        val cvicenie: ViewInteraction = onView(withId(R.id.cvicenieTextView))
+
+        assertEquals("voda", getText(voda))
+        assertEquals("jedlo", getText(jedlo))
+        assertEquals("cvicenie", getText(cvicenie))
+
+    }
 
     @Test
     public fun addWater() {
-        //onView(with("Voda")).check(matches(isDisplayed()));
-
         onView(withId(R.id.vodaButton)).perform(click())
-        //onView(withId(R.id.vodaText)).check(matches(withText("Hello Espresso!")))
+        mnozstvoVody = mnozstvoVody + 1
+
         onView(withId(R.id.vodaButton)).check(isRightOf(withId(R.id.vodaText) ))
 
+        val cv: ViewInteraction = onView(withId(R.id.vodaText))
+        val c = getText(cv)
+
+        assertEquals("vypite pohare vody: " + mnozstvoVody, c)
     }
+
+
 
     @Test
     public fun testOpenBMI() {
-        //onView(with("Voda")).check(matches(isDisplayed()));
         onView(withId(R.id.button)).perform(click())
-
-
     }
+
+    @Test
+    public fun testOpenAddKcal() {
+        onView(withId(R.id.vyberJedlaButton)).perform(click())
+    }
+
+
 }

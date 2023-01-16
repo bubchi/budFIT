@@ -78,7 +78,10 @@ class JedloTest {
     @Test
     public fun kcalTofu() {
         onView(withId(R.id.maso)).perform(click())
-        //onData(hasToString("tofu")).perform(click())
+        var tofu: ViewInteraction = onView(withId(R.id.maso))
+        var tofuText = getText(tofu)
+        onView(withSpinnerText("tofu")).perform(click())
+        //onData(hasToString(getText(tofu))).perform(click())
         //onData(anything()).atPosition(2).perform(click())
     }
 }

@@ -65,20 +65,39 @@ class BMITest {
         onView(ViewMatchers.withId(R.id.editTextVyska)).perform(typeText("120"))
         //onView(withId(R.id.vodaText)).check(matches(withText("Hello Espresso!")))
         onView(ViewMatchers.withId(R.id.editTextTextVaha)).perform(typeText("5"))
+        onView(ViewMatchers.isRoot()).perform(ViewActions.closeSoftKeyboard())
         onView(ViewMatchers.withId(R.id.VypocitajButton)).perform(click())
 
         val vysledokBMI: ViewInteraction = onView(withId(R.id.KomentarBMI))
         val v = getText(vysledokBMI)
 
         onView(withText("podla BMI mas nizku vahu")).check(matches(isDisplayed()))
-        //assertEquals("podla BMI mas nizku vahu", v)
+    }
 
-        //onView(withText("vahu")).check(matches(isDisplayed()))
-//        assertThat(onView(withId(R.id.KomentarBMI)).check(matches(withText("")))
-//        onView(withContentDescription("nizku"))
-//        onView(withText(R.id.KomentarBMI.toString()))
-//        onView(withId(R.id.KomentarBMI)).check())
-        //assertThat(R.id.KomentarBMI.toString(), containsString("nizku"))
-        //onView(withText("podla BMI mas nizku vahu")).check(matches(isDisplayed()))
+    @Test
+    public fun calculateOverweight() {
+        onView(ViewMatchers.withId(R.id.editTextVyska)).perform(typeText("120"))
+        //onView(withId(R.id.vodaText)).check(matches(withText("Hello Espresso!")))
+        onView(ViewMatchers.withId(R.id.editTextTextVaha)).perform(typeText("120"))
+        onView(ViewMatchers.isRoot()).perform(ViewActions.closeSoftKeyboard())
+        onView(ViewMatchers.withId(R.id.VypocitajButton)).perform(click())
+
+        val vysledokBMI: ViewInteraction = onView(withId(R.id.KomentarBMI))
+        val v = getText(vysledokBMI)
+
+        onView(withText("podla BMI mas nadvahu")).check(matches(isDisplayed()))
+    }
+
+    @Test
+    public fun calculateNormalweight() {
+        onView(ViewMatchers.withId(R.id.editTextVyska)).perform(typeText("170"))
+        onView(ViewMatchers.withId(R.id.editTextTextVaha)).perform(typeText("65"))
+        onView(ViewMatchers.isRoot()).perform(ViewActions.closeSoftKeyboard())
+        onView(ViewMatchers.withId(R.id.VypocitajButton)).perform(click())
+
+        val vysledokBMI: ViewInteraction = onView(withId(R.id.KomentarBMI))
+        val v = getText(vysledokBMI)
+
+        onView(withText("podla BMI mas vahu v norme")).check(matches(isDisplayed()))
     }
 }

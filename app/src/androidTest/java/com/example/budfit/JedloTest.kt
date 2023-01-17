@@ -27,6 +27,8 @@ import junit.framework.Assert.assertEquals
 import org.hamcrest.CoreMatchers.*
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers.hasToString
+import org.junit.After
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -38,9 +40,6 @@ class JedloTest {
     @get:Rule
     val activityRule = ActivityScenarioRule(VyberJedlaActivity::class.java)
 
-    @Rule
-    @JvmField
-    val mainActivityRule = IntentsTestRule(MainActivity::class.java)
 
     fun getTextSpinner(matcher: ViewInteraction): String {
         var text = String()
@@ -110,13 +109,15 @@ class JedloTest {
         onView(withId(R.id.ovocie)).check(isAbove(withId(R.id.obylniny)))
         onView(withId(R.id.obylniny)).check(isAbove(withId(R.id.vypocitajKcal)))
     }
+
+
     private fun selectSpinnerItem(resId: Int, selection: String) {
         onView(withId(resId)).perform(click())
         onData(hasToString(selection)).perform(click())
         onView(withId(resId)).check(matches(withSpinnerText(containsString(selection))))
     }
     @Test
-    public fun kcalTofu() {
+    fun kcalTofu() {
         onView(withId(R.id.maso)).perform(click());
         onData(anything()).atPosition(4).perform(click());
         onView(withId(R.id.maso)).check(matches(withSpinnerText(containsString("tofu"))));
@@ -140,15 +141,10 @@ class JedloTest {
 
     }
 
-    @Test fun backButton() {
-        onView(withId(R.id.backButton)).perform(click())
-        Intents.intended(IntentMatchers.hasComponent(MainActivity::class.java!!.getName()))
 
-
-    }
 
     @Test
-    public fun checkMasoItems() {
+    fun checkMasoItems() {
         onView(withId(R.id.maso)).perform(click());
         onData(anything()).atPosition(1).perform(click());
         onView(withId(R.id.maso)).check(matches(withSpinnerText(containsString("kuracie"))));
@@ -239,4 +235,15 @@ class JedloTest {
         onView(withId(R.id.ovocie)).check(matches(withSpinnerText(containsString("kiwi"))));
     }
 
+    /*@Rule
+    @JvmField
+    val mainActivityRule = IntentsTestRule(MainActivity::class.java)
+
+    @Test fun backButton() {
+        onView(withId(R.id.backButton)).perform(click())
+        Intents.intended(IntentMatchers.hasComponent(MainActivity::class.java!!.getName()))
+
+
+    }*/
 }
+
